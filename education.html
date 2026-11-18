@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - MD. FATMI AHSAN SHOEB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b130f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 19, 15, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(124, 232, 101, 0.1);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #7ce865;
+        }
+        .contact-btn-nav {
+            border: 1px solid rgba(124, 232, 101, 0.4);
+            padding: 8px 18px;
+            border-radius: 20px;
+            color: #7ce865 !important;
+        }
+
+        /* Education Section */
+        .education-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 130px 20px 80px 20px;
+        }
+        .section-tag {
+            color: #7ce865;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-family: monospace;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            color: #a0aec0;
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+        }
+
+        /* Cards Styling */
+        .edu-card {
+            background: #122118;
+            border: 1px solid rgba(124, 232, 101, 0.2);
+            border-radius: 18px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .edu-card:hover {
+            border-color: #7ce865;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(124, 232, 101, 0.12);
+        }
+
+        /* Main University Card */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .uni-short {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            letter-spacing: 1px;
+        }
+        .status-badge {
+            background: rgba(124, 232, 101, 0.1);
+            color: #7ce865;
+            border: 1px solid rgba(124, 232, 101, 0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .degree-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .uni-full {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+        .duration-loc {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 22px;
+        }
+        .uni-desc {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-bottom: 22px;
+            border-bottom: 1px solid rgba(124, 232, 101, 0.15);
+            margin-bottom: 22px;
+        }
+
+        /* Coursework Pills */
+        .coursework-label {
+            color: #7ce865;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .course-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(124, 232, 101, 0.25);
+            color: #e2e8f0;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .course-pill:hover {
+            background: rgba(124, 232, 101, 0.15);
+            color: #7ce865;
+            border-color: #7ce865;
+        }
+
+        /* Grid for HSC & SSC */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .board-card {
+            margin-bottom: 0;
+        }
+        .exam-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .gpa-score {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #7ce865;
+            margin-bottom: 10px;
+        }
+        .gpa-score span {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        .board-info {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Highlight Card */
+        .highlight-label {
+            color: #7ce865;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .highlight-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .board-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html" class="logo">MD. FATMI AHSAN SHOEB</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html" class="active">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="contact-btn-nav">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Main Education Content -->
+    <section class="education-section">
+        <div class="section-tag">03 · ACADEMIC BACKGROUND</div>
+        <h1 class="section-title">My Education</h1>
+        <p class="section-subtitle">My academic journey, core coursework, and qualifications.</p>
+
+        <!-- University Card -->
+        <div class="edu-card">
+            <div class="card-header">
+                <span class="uni-short">AUST</span>
+                <span class="status-badge">● Currently Studying</span>
+            </div>
+            <h2 class="degree-title">B.Sc. in Computer Science & Engineering (CSE)</h2>
+            <div class="uni-full">Ahsanullah University of Science and Technology</div>
+            <div class="duration-loc">2025 – 2028 (Expected) · Tejgaon, Dhaka, Bangladesh</div>
+            <p class="uni-desc">
+                Focusing on core computer science principles, object-oriented software architecture, algorithm design, and hands-on application development.
+            </p>
+            <div class="coursework-label">RELEVANT COURSEWORK</div>
+            <div class="course-tags">
+                <span class="course-pill">Java OOP</span>
+                <span class="course-pill">Discrete Mathematics</span>
+                <span class="course-pill">Software Development (C++ / iGraphics)</span>
+                <span class="course-pill">Structured Programming</span>
+                <span class="course-pill">Electrical Circuit Analysis</span>
+                <span class="course-pill">Differential Equations</span>
+            </div>
+        </div>
+
+        <!-- HSC & SSC Grid -->
+        <div class="board-grid">
+            <div class="edu-card board-card">
+                <div class="exam-title">HSC · 2024</div>
+                <div class="gpa-score">5.00 <span>/ 5.00</span></div>
+                <div class="board-info">Science Group · Dhaka Board</div>
+            </div>
+            <div class="edu-card board-card">
+                <div class="exam-title">SSC · 2022</div>
+                <div class="gpa-score">5.00 <span>/ 5.00</span></div>
+                <div class="board-info">Science Group · Dhaka Board</div>
+            </div>
+        </div>
+
+        <!-- Academic Highlight Card -->
+        <div class="edu-card">
+            <div class="highlight-label">ACADEMIC HIGHLIGHT</div>
+            <div class="highlight-text">
+                Consistent academic foundation in Science and Computer Science, maintaining a strong analytical mindset and active participation in software development projects.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
