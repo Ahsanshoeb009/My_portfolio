@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - MD. FATMI AHSAN SHOEB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #070b14;
+            color: #f8fafc;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 245, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(123, 44, 191, 0.12) 0%, transparent 45%);
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(14px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 245, 212, 0.15);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #00f5d4;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #00f5d4;
+        }
+        .contact-btn-nav {
+            background: linear-gradient(135deg, rgba(0, 245, 212, 0.15), rgba(123, 44, 191, 0.2));
+            border: 1px solid rgba(0, 245, 212, 0.4);
+            padding: 8px 20px;
+            border-radius: 25px;
+            color: #00f5d4 !important;
+        }
+
+        /* Main Container */
+        .skills-wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 130px 20px 80px 20px;
+        }
+
+        /* Top Hero Header */
+        .top-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .badge-tag {
+            display: inline-block;
+            background: rgba(0, 245, 212, 0.1);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            color: #00f5d4;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+        .top-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #00f5d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .top-header p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Filter Pill Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 10px 22px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .tab-btn:hover {
+            border-color: #00f5d4;
+            color: #00f5d4;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #00f5d4, #00bbf9);
+            color: #070b14;
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+        }
+
+        /* Glassmorphism Cards Grid */
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 245, 212, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 245, 212, 0.12);
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .card-info {
+            flex: 1;
+        }
+        .cat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #00f5d4;
+            font-family: monospace;
+            margin-bottom: 6px;
+        }
+        .card-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .card-info p {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Circular SVG Progress Ring */
+        .ring-box {
+            position: relative;
+            width: 76px;
+            height: 76px;
+            flex-shrink: 0;
+        }
+        .ring-box svg {
+            width: 76px;
+            height: 76px;
+            transform: rotate(-90deg);
+        }
+        .ring-box circle {
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+        }
+        .ring-bg {
+            stroke: rgba(255, 255, 255, 0.08);
+        }
+        .ring-progress {
+            stroke: #00f5d4;
+            stroke-dasharray: 201;
+            transition: stroke-dashoffset 1s ease;
+            filter: drop-shadow(0 0 4px rgba(0, 245, 212, 0.6));
+        }
+        .ring-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: monospace;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* Bottom Tech Matrix Box */
+        .matrix-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 27, 75, 0.5));
+            border: 1px solid rgba(123, 44, 191, 0.4);
+            border-radius: 22px;
+            padding: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+        .matrix-left h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .matrix-left p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .tool-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .chip {
+            background: rgba(0, 245, 212, 0.08);
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            color: #00f5d4;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.88rem;
+            transition: 0.3s;
+        }
+        .chip:hover {
+            background: #00f5d4;
+            color: #070b14;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .top-header h1 { font-size: 2.2rem; }
+            .glass-card { flex-direction: column-reverse; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html" class="logo">MD. FATMI AHSAN <span>SHOEB</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html" class="active">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="contact-btn-nav">Contact Me</a>
+        </div>
+    </nav>
+
+    <div class="skills-wrapper">
+        <!-- Header -->
+        <div class="top-header">
+            <div class="badge-tag">✦ CAPABILITIES & TECH STACK</div>
+            <h1>Technical Expertise</h1>
+            <p>A blend of core programming languages, game physics, and modern web architecture.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+            <button class="tab-btn active" onclick="filterCards('all', this)">All Skills</button>
+            <button class="tab-btn" onclick="filterCards('core', this)">Core Languages</button>
+            <button class="tab-btn" onclick="filterCards('dev', this)">Web & Game Dev</button>
+            <button class="tab-btn" onclick="filterCards('cs', this)">CS & Workflow</button>
+        </div>
+
+        <!-- Glassmorphism Cards with Circular Rings -->
+        <div class="glass-grid">
+            
+            <!-- C / C++ -->
+            <div class="glass-card" data-type="core">
+                <div class="card-info">
+                    <div class="cat-label">Language</div>
+                    <h3>C & C++</h3>
+                    <p>Pointers, memory allocation, data structures, and competitive problem-solving.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 20;"></circle>
+                    </svg>
+                    <div class="ring-text">90%</div>
+                </div>
+            </div>
+
+            <!-- Java OOP -->
+            <div class="glass-card" data-type="core">
+                <div class="card-info">
+                    <div class="cat-label">Object-Oriented</div>
+                    <h3>Java OOP</h3>
+                    <p>Multithreading, custom exceptions, file I/O, packages, and UML design.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 30;"></circle>
+                    </svg>
+                    <div class="ring-text">85%</div>
+                </div>
+            </div>
+
+            <!-- 2D Game Dev -->
+            <div class="glass-card" data-type="dev">
+                <div class="card-info">
+                    <div class="cat-label">Graphics & Physics</div>
+                    <h3>iGraphics 2D Dev</h3>
+                    <p>Sprite animation, collision detection, jump physics, and HUD UI systems.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 24;"></circle>
+                    </svg>
+                    <div class="ring-text">88%</div>
+                </div>
+            </div>
+
+            <!-- Frontend Web -->
+            <div class="glass-card" data-type="dev">
+                <div class="card-info">
+                    <div class="cat-label">Frontend</div>
+                    <h3>HTML, CSS & JS</h3>
+                    <p>Modern responsive interfaces, glassmorphism layouts, and DOM interactivity.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 36;"></circle>
+                    </svg>
+                    <div class="ring-text">82%</div>
+                </div>
+            </div>
+
+            <!-- Git & GitHub -->
+            <div class="glass-card" data-type="cs">
+                <div class="card-info">
+                    <div class="cat-label">Collaboration</div>
+                    <h3>Git & GitHub</h3>
+                    <p>Repository syncing, branch workflows, merge conflict resolution, and Pages.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 30;"></circle>
+                    </svg>
+                    <div class="ring-text">85%</div>
+                </div>
+            </div>
+
+            <!-- Discrete Math -->
+            <div class="glass-card" data-type="cs">
+                <div class="card-info">
+                    <div class="cat-label">Foundations</div>
+                    <h3>Discrete Math</h3>
+                    <p>Logic, combinatorics, graph theory fundamentals, and algorithmic proofs.</p>
+                </div>
+                <div class="ring-box">
+                    <svg>
+                        <circle class="ring-bg" cx="38" cy="38" r="32"></circle>
+                        <circle class="ring-progress" cx="38" cy="38" r="32" style="stroke-dashoffset: 40;"></circle>
+                    </svg>
+                    <div class="ring-text">80%</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Tools Matrix -->
+        <div class="matrix-box">
+            <div class="matrix-left">
+                <h2>Development Environment & Tools</h2>
+                <p>Daily software stack used for coding, debugging, and project management.</p>
+            </div>
+            <div class="tool-chips">
+                <span class="chip">Visual Studio</span>
+                <span class="chip">NetBeans IDE</span>
+                <span class="chip">VS Code</span>
+                <span class="chip">GitHub Desktop</span>
+                <span class="chip">Linux Basics</span>
+                <span class="chip">UML Modeling</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterCards(type, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                if (type === 'all' || card.getAttribute('data-type') === type) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
