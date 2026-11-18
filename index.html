@@ -1,0 +1,65 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleHome  Shoebtitle
+link rel=stylesheet href=style.css
+head
+body
+nav
+ a href=index.html class=logospan class=logo-dotspan Shoeba
+ div class=nav-links
+  a href=index.html class=activeHomea
+  a href=about.htmlAbout Mea
+  a href=education.htmlEducationa
+  a href=skills.htmlSkillsa
+  a href=projects.htmlProjectsa
+  a href=experience.htmlExperiencea
+  a href=achievements.htmlAchievementsa
+  a href=certifications.htmlCertificationsa
+  a href=contact.html class=nav-contactContacta
+ div
+nav
+
+section class=page-section hero-layout
+ div class=left
+  div class=tagCSE STUDENT · AUST, BANGLADESHdiv
+  h1Hi, I'mbrspan class=nameShoeb.spanh1
+  div class=roleAspiring span id=typingSoftware Engineerspandiv
+  p class=desc
+   Computer Science & Engineering student at Ahsanullah
+   University of Science and Technology. Exploring software
+   engineering, problem-solving, and the technologies
+   shaping tomorrow.
+  p
+  div class=buttons
+   a class=btn primary href=httpsgithub.comAhsanshoeb009 target=_blankExplore My GitHub ↗a
+   a class=btn secondary href=contact.htmlGet In Touch →a
+  div
+  div class=details
+   AUST · CSE &nbsp;  &nbsp; Class of 2028 &nbsp;  &nbsp; Bangladesh
+  div
+ div
+ div class=right
+  div class=orbitdiv
+  div class=card
+   div class=avatarASdiv
+   smallASPIRING SOFTWARE ENGINEERsmall
+   h2Md. Fatmi Ahsan Shoebh2
+   pCurious mind. Builder's mindset.p
+   div class=status✦ Always learning & buildingdiv
+  div
+ div
+section
+
+script
+const words=[Software Engineer,Problem Solver,Future Developer];
+let i=0;
+setInterval(()={
+ i=(i+1)%words.length;
+ document.getElementById(typing).textContent=words[i];
+},2200);
+script
+body
+html
